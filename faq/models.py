@@ -4,6 +4,7 @@
 from django.db import models
 from django.contrib.auth.models import User # so we can associate
 from django.utils import timezone  # for tz aware dates
+from django.urls import reverse # for category url
 
 
 class PublishedManager(models.Manager):
@@ -11,7 +12,6 @@ class PublishedManager(models.Manager):
     #   allows us to default return only records which are published
     def get_queryset(self):
         return super().get_queryset().filter(status=Question.Status.PUBLISHED)
-
 
 class QuestionCategory(models.Model):
     #   Categories of Questions
@@ -31,6 +31,9 @@ class QuestionCategory(models.Model):
     def __str__(self):
         #   model text listing
         return self.category
+    
+    def get_absolute_url(self):
+        return reverse('faq:questions_by_category', args=[self.slug])
 
 class Question(models.Model):
     #   Categories of Questions

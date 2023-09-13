@@ -1,0 +1,59 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FAQ List</title>
+    <meta
+      name="description"
+      content="An example FAQ app for Django and JavaScript."
+    />
+    <meta name="author" content="Shawn Girard" />
+    <!-- app CSS -->
+    <link rel="stylesheet" href="{% static 'faq/css/faq.css' %}" />
+    <!-- app JS -->
+    <script src="{% static 'faq/js/faq.js' %}" defer></script>
+  </head>
+  <body id="top" class="page">
+
+    <main class="faq-container">
+
+        <aside class="category-container">
+            <h3>FAQ Categories</h3>
+            <ul>
+                <li {% if not category %}class="selected"{% endif %}>
+                    <a href="{% url 'faq:faq' %}">All</a>
+                </li>
+                {% for c in categories %}
+                <li {% if category.slug == c.slug %}class="selected"{% endif %}>
+                    <a href="{{ c.get_absolute_url }}">{{ c.category }}</a>
+                </li>
+                {% endfor %}
+            </ul>            
+        </aside>
+
+        <div class="qa-container">
+
+            <header class="qa-header">
+                <h1>{% if category %}{{ category.category }}{% else %}Frequently Asked Questions{% endif %}</h1>
+            </header>
+
+            <article class="question-container">
+                {% if questions %} {% for question in questions %}
+                  <div class="question">
+                    {{ question.question }}
+                  </div>
+                  <div class="answer">{{ question.answer }}</div>
+                {% endfor %} {% else %}
+                <div class="no-questions">There are no questions.</div>
+                {% endif %}
+            </article>            
+
+        </div>
+
+    </main>
+
+  </body>
+
+</html>

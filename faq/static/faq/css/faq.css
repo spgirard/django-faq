@@ -1,0 +1,99 @@
+/* FAQ CSS */
+
+/* BASE STYLES */
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* PAGE SETUP */
+
+.page {
+  padding: 0;
+  margin: 0;
+}
+
+.faq-container {
+    width: 90%;
+    padding: 0;
+    margin: 0 auto;
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+}
+
+/* CATEGORIES */
+
+.category-container {
+    padding: 0;
+    margin: 0;
+    flex: 1 1 auto;
+}
+
+.category-container h3 {
+    padding: 0;
+    margin: 0;
+}
+
+.category-container ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.category-container li {
+    padding: .25rem;
+    padding: 0;
+    margin: 0;
+}
+
+.selected {
+    font-weight: bold;
+    background-color: #A2D2FF;
+    color: white;
+}
+
+
+/* QUESTIONS & ANSWERS */
+
+.qa-container {
+    flex: 3 3 auto;
+}
+
+
+.qa-header {
+    padding: .5rem;
+    margin: 0;
+    background-color: #CDB4DB;
+    text-shadow: 1px 1px white; 
+  }
+  
+.qa-header h1 {
+    padding: 0;
+    margin: 0;
+}
+
+.qa-container {
+    margin-left: .5rem;
+}
+
+
+.question {
+    padding: .5rem;
+    font-size: 1.25rem;
+    background-color: #FFAFCC;
+    font-weight: bold;
+}
+
+.answer {
+    padding: 1rem;
+    font-size: 1.0rem;
+    background-color: #FFC8DD;
+}
+
+.no-questions {
+    padding: .5rem;
+    background-color: #BDE0FE;
+    font-size: 1.25rem;
+}
