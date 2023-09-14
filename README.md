@@ -3,4 +3,5 @@
 A very humble "frequently asked questions" app for django.
 
 - Questions have categories.
-- Example page lists all questions or questions filtered by category.
+- Questions can be published or draft
+- Example page lists all questions or questions filtered by selected category.
