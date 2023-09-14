@@ -14,6 +14,11 @@
     --page-bg: #000;
     --category-bg: #BDE0FE;
     --highlight-bg: #A2D2FF;
+    --head-bg: #CDB4DB;
+    --question-bg: #FFAFCC;
+    --answer-bg: #FFC8DD;
+    --light: white;
+
     /* fonts */
     --sans: 'Montserrat', sans-serif;
 }
@@ -77,7 +82,7 @@ a {
 .selected {
     font-weight: bold;
     background-color: var(--highlight-bg);
-    color: white;
+    color: var(--light);
     border-radius: .5rem 0 0 .5rem;
 }
 
@@ -95,8 +100,8 @@ a {
 .qa-header {
     padding: .5rem;
     margin: 0;
-    background-color: #CDB4DB;
-    text-shadow: 1px 1px white; 
+    background-color: var(--head-bg);
+    text-shadow: 1px 1px var(--light); 
   }
   
 .qa-header h1 {
@@ -107,18 +112,19 @@ a {
 .question {
     padding: .5rem;
     font-size: 1.25rem;
-    background-color: #FFAFCC;
+    background-color: var(--question-bg);
     font-weight: bold;
 }
 
 .answer {
     padding: 1rem;
     font-size: 1.0rem;
-    background-color: #FFC8DD;
+    background-color: var(--answer-bg);
 }
 
 .no-questions {
     padding: .5rem;
-    background-color: #BDE0FE;
+    background-color: var(--answer-bg);
     font-size: 1.25rem;
+    min-height: 12.5rem;
 }

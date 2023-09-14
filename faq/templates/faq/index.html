@@ -1,4 +1,5 @@
 {% load static %}
+{% load markdown_extras %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -44,9 +45,9 @@
                   <div class="question">
                     {{ question.question }}
                   </div>
-                  <div class="answer">{{ question.answer }}</div>
+                  <div class="answer">{{ question.answer|markdown|linebreaks }}</div>
                 {% endfor %} {% else %}
-                <div class="no-questions">There are no questions.</div>
+                <div class="no-questions">There are currently no questions matching criteria.</div>
                 {% endif %}
             </article>            
 
